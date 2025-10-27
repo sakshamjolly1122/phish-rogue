@@ -5,15 +5,15 @@ echo "🚀 Starting Stage-A training and inference..."
 
 # Train Stage-A model
 echo "📚 Training Stage-A model..."
-python -m phish_rogue.train_stage_a --config configs/default.yaml
+python3 -m phish_rogue.train_stage_a --config configs/default.yaml
 
 # Run Stage-A inference on validation set
 echo "🔍 Running Stage-A inference on validation set..."
-python -m phish_rogue.infer_stage_a --config configs/default.yaml --split val
+python3 -m phish_rogue.infer_stage_a --config configs/default.yaml --split val
 
 # Route uncertain samples
 echo "🎯 Routing uncertain samples..."
-python -m phish_rogue.route_uncertainty --config configs/default.yaml \
+python3 -m phish_rogue.route_uncertainty --config configs/default.yaml \
   --input outputs/stage_a/preds_val.csv \
   --out outputs/stage_a/val_routed.csv
 
