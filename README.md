@@ -2,7 +2,7 @@
 
 **Two-stage, uncertainty-aware phishing and malicious URL detector combining fast char-level deep learning with adaptive HTML feature analysis.**
 
-## 🎯 Overview
+## Overview
 
 PHISH-ROGUE is an innovative two-stage phishing URL detection system that combines:
 
@@ -12,7 +12,7 @@ PHISH-ROGUE is an innovative two-stage phishing URL detection system that combin
 - **Adversarial robustness**: URL augmentation techniques for better generalization
 - **Multi-class support**: Handles benign, phishing, malware, spam, and defacement URLs
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 340WW/
@@ -50,7 +50,7 @@ PHISH-ROGUE is an innovative two-stage phishing URL detection system that combin
 └── README.md                     # This file
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ### 1. Setup Environment
 
@@ -77,7 +77,7 @@ bash scripts/run_stage_a.sh
 bash scripts/run_stage_b.sh
 ```
 
-## 📊 Expected Outputs
+## Expected Outputs
 
 After running the complete pipeline, you'll find:
 
@@ -100,7 +100,7 @@ After running the complete pipeline, you'll find:
 - `reports_test.json` - Comprehensive metrics report
 - `plots/` - Confusion matrix and reliability diagrams
 
-## ⚙️ Configuration
+## Configuration
 
 Edit `configs/default.yaml` to customize:
 
@@ -117,7 +117,7 @@ task_type: "binary"
 class_names: ["benign", "malicious"]
 ```
 
-## 🔬 Key Features
+## Key Features
 
 ### Stage-A: Fast URL Classification
 - **Char-level CNN**: Captures local URL patterns
@@ -136,7 +136,7 @@ class_names: ["benign", "malicious"]
 - **Class-specific confidence**: Different thresholds per class
 - **Cost-aware**: Balances accuracy vs. computational cost
 
-## 📈 Performance Metrics
+## Performance Metrics
 
 The system provides comprehensive evaluation:
 
@@ -146,7 +146,7 @@ The system provides comprehensive evaluation:
 - **Expected Calibration Error (ECE)**: Model confidence calibration
 - **Escalation Rate**: Percentage of samples sent to Stage-B
 
-## 🛠️ Advanced Usage
+## Advanced Usage
 
 ### Custom Training
 
@@ -177,7 +177,7 @@ python -m phish_rogue.route_uncertainty --config configs/default.yaml \
   --input predictions.csv --out routed.csv
 ```
 
-## 🔧 Troubleshooting
+## Troubleshooting
 
 ### Common Issues
 
@@ -192,14 +192,14 @@ python -m phish_rogue.route_uncertainty --config configs/default.yaml \
 - Adjust `augment_prob` for more/fewer augmented samples
 - Tune routing thresholds based on your accuracy/speed requirements
 
-## 🔮 Future Work
+## Future Work
 
 - **Graph features**: Add URL graph-based features
 - **Temperature scaling**: Improve calibration
 - **Ensemble methods**: Combine multiple models
 - **Real-time deployment**: Optimize for production use
 
-## 📝 Citation
+## Citation
 
 If you use PHISH-ROGUE in your research, please cite:
 
@@ -212,10 +212,10 @@ If you use PHISH-ROGUE in your research, please cite:
 }
 ```
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 ---
 
-**Built with ❤️ for cybersecurity research and education.**
+**Built with love for cybersecurity research and education.**
