@@ -212,10 +212,6 @@ If you use PHISH-ROGUE in your research, please cite:
 }
 ```
 
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
 ---
 
 **Built with love for cybersecurity research and education.**
