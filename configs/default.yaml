@@ -1,0 +1,52 @@
+seed: 42
+task_type: "binary"
+class_names: ["benign","malicious"]
+
+paths:
+  raw_dir: "raw"
+  processed_dir: "data/processed"
+  outputs_dir: "outputs"
+  stage_a_dir: "outputs/stage_a"
+  stage_b_dir: "outputs/stage_b"
+
+data:
+  train_csv: "data/processed/train.csv"
+  val_csv: "data/processed/val_unseen.csv"
+  test_csv: "data/processed/test.csv"
+  text_col: "url"
+  label_col: "label"
+  max_url_len: 256
+  augment_prob: 0.2
+
+stage_a:
+  model:
+    vocab_size: 150
+    d_model: 192
+    nheads: 3
+    nlayers: 2
+  train:
+    batch_size: 256
+    lr: 1e-3
+    epochs: 12
+    weight_decay: 1e-4
+    focal_gamma: 2.0
+    patience: 3
+  routing:
+    entropy_eps: 0.6
+    min_confidence:
+      benign: 0.90
+      malicious: 0.85
+
+stage_b:
+  use_html_features: true
+  use_graph_features: false
+  html_timeout_ms: 150
+  content_dim: 20
+  train:
+    batch_size: 128
+    lr: 1e-3
+    epochs: 8
+    weight_decay: 5e-5
+
+logging:
+  enable_matplotlib: true
